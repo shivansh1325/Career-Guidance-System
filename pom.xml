@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany.career_guidance_app</groupId>
+    <artifactId>career_guidance_APP</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <repositories>
+        <repository>
+            <id>unknown-jars-temp-repo</id>
+            <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
+            <url>file:${project.basedir}/lib</url>
+        </repository>
+    </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>unknown.binary</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.cloud.sql</groupId>
+            <artifactId>cloud-sql-connector-jdbc-sqlserver</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.15</version>
+        </dependency>
+
+    </dependencies>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
+        <exec.mainClass>com.mycompany.career_guidance_app.Career_guidance_APP</exec.mainClass>
+    </properties>
+    <build>
+<plugins>
+<plugin>
+<artifactId>maven-assembly-plugin</artifactId>
+<version>2.4</version>
+<configuration>
+<descriptorRefs>
+<descriptorRef>jar-with-dependencies</descriptorRef>
+</descriptorRefs>
+<archive>
+<manifest>
+<mainClass>career_guidance_app.login_page</mainClass>
+</manifest>
+</archive>
+</configuration>
+<executions>
+<execution>
+<id>make-assembly</id>
+<phase>package</phase>
+<goals>
+<goal>single</goal>
+</goals>
+</execution>
+</executions>
+</plugin>
+</plugins>
+</build>
+</project>
